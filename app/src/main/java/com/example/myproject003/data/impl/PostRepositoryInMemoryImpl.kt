@@ -54,8 +54,6 @@ class PostRepositoryInMemoryImpl: PostRepository {
         data.value = posts
     }
 
-//    if (post.id == PostRepository.NEW_POST_ID) insert(post) else update(post)
-
     override fun save(post: Post) {
         if (post.id == 0L) {
             posts = listOf(
@@ -75,14 +73,6 @@ class PostRepositoryInMemoryImpl: PostRepository {
 
         data.value = posts
     }
-
-//    private fun insert (post: Post){
-//        data.value = listOf(
-//            post.copy(
-//                id = ++nextId
-//            )
-//        ) + posts
-//    }
 
     private fun update (post: Post) {
         data.value = posts.map {
